@@ -5,12 +5,8 @@ Keychain Manager
 .. image:: https://badge.fury.io/py/keychain_manager.png
     :target: http://badge.fury.io/py/keychain_manager
     
-.. image:: https://travis-ci.org/zen4ever/keychain_manager.png?branch=master
-        :target: https://travis-ci.org/zen4ever/keychain_manager
-
 .. image:: https://pypip.in/d/keychain_manager/badge.png
         :target: https://crate.io/packages/keychain_manager?version=latest
-
 
 A Python api for Mac OS X Keychain.
 It is a port of https://github.com/jprichardson/keychain_manager
@@ -67,3 +63,11 @@ Example of generating Apple Push Certificate
         KeychainManager.convert_p12_to_pem(P12_FILE, PEM_FILE)
 
         kcm.delete()
+
+Tests
+-----
+
+Tests are running on the Mac OS X only, since we need to have actualy Keychain
+Manager. Just clone the repo on your Mac computer and run::
+
+    python setup.py test
