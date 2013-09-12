@@ -20,7 +20,7 @@ To install the package do:
 
     .. code-block:: bash
 
-        pip install mdx-twitter
+        pip install keychain-manager
 
 Usage
 -----

@@ -3,6 +3,6 @@
 
 __author__ = 'Andrii Kurinnyi'
 __email__ = 'andrew@marpasoft.com'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 from .keychain_manager import KeychainManager

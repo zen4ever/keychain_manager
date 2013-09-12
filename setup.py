@@ -16,8 +16,8 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='keychain_manager',
     version='0.1.0',
-    description='A Python api for Mac OS X Keychain, '
-    'heavily inspired by https://github.com/jprichardson/keychain_manager',
+    description='A Python API for Mac OS X Keychain, '
+    'port of https://github.com/jprichardson/keychain_manager',
     long_description=readme + '\n\n' + history,
     author='Andrii Kurinnyi',
     author_email='andrew@marpasoft.com',
