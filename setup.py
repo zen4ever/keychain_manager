@@ -5,6 +5,7 @@ import os
 import sys
 
 from setuptools import setup
+from keychain_manager import __version__
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
@@ -15,7 +16,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='keychain_manager',
-    version='0.1.0',
+    version=__version__,
     description='A Python API for Mac OS X Keychain, '
     'port of https://github.com/jprichardson/keychain_manager',
     long_description=readme + '\n\n' + history,
