@@ -36,7 +36,7 @@ Example of generating Apple Push Certificate
         # let's choose a keychain name, so we won't pollute the 'login' keychain
         KEYCHAIN = 'apple_push_keychain'
         # this is where the file aps_production_identity.cer will be downloaded
-        YOUR_DOWNLOADS_DIR = '~/Downloads/'
+        YOUR_DOWNLOADS_DIR = os.path.expanduser('~/Downloads/')
 
         RSA_FILE = '/tmp/myrsa.key'
         KeychainManager.generate_rsa_key(RSA_FILE)
@@ -52,12 +52,12 @@ Example of generating Apple Push Certificate
 
         kcm.import_rsa_key(RSA_FILE)
 
-        #now from your browser, you'll have downloaded a file from Apple typically
-        named: aps_production_identity.cer
-        kcm.import_apple_cert(os.path.join(YOUR_DOWNLOADS_DIR, 'aps_production_identity.cer'))
+        # now from your browser, you'll have downloaded a file from Apple
+        # typically named: aps_production.cer
+        kcm.import_apple_cert(os.path.join(YOUR_DOWNLOADS_DIR, 'aps_production.cer'))
 
         P12_FILE = '/tmp/push_prod.p12'
-        kcm.export_identites(P12_FILE)
+        kcm.export_identities(P12_FILE)
 
         PEM_FILE = '/tmp/push_prod.pem'
         KeychainManager.convert_p12_to_pem(P12_FILE, PEM_FILE)
