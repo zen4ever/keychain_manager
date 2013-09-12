@@ -12,12 +12,8 @@ Keychain Manager
         :target: https://crate.io/packages/keychain_manager?version=latest
 
 
-A Python api for Mac OS X Keychain, heavily inspired by https://github.com/jprichardson/keychain_manager
+A Python api for Mac OS X Keychain.
+It is a port of https://github.com/jprichardson/keychain_manager
 
 * Free software: BSD license
 * Documentation: http://keychain_manager.rtfd.org.
-
-Features
---------
-
-* TODO
