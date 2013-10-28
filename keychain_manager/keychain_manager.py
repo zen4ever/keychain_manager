@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import locale
-import subprocess
+import os
 import re
+import subprocess
 
 ERROR_RE = re.compile(r'^security: ')
 KEYCHAIN_RE = re.compile(r'^keychain: \"(.+)\"')
@@ -238,7 +239,15 @@ class KeychainManager(object):
 
     @classmethod
     def keychain_files(self):
-        return self._keychains_from_output(self._check_output(['security', 'list-keychains']))
+        return list(set(
+            self._keychains_from_output(self._check_output(['security', 'list-keychains'])) +
+            map(
+                lambda x: os.path.join(os.path.expanduser('~/Library/Keychains/'), x),
+                filter(
+                    lambda x: not x.startswith('.'),
+                    os.listdir(os.path.expanduser('~/Library/Keychains/'))
+                    )
+            )))
 
     @classmethod
     def default_keychain(self):
